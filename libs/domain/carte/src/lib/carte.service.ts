@@ -1,5 +1,5 @@
 import { PlateRepository } from "./carte.repository";
-import { Plate } from "./plate";
+import { Plate, Message } from "./plate";
 
 export class PlateService {
   private readonly plateRepository: PlateRepository;
@@ -11,7 +11,11 @@ export class PlateService {
     return this.plateRepository.findAll();
   }
 
-    async create(plat: Plate): Promise<Plate> {
+    async create(plat: Plate): Promise<Plate | Message> {
     return this.plateRepository.create(plat);
+  }
+
+   async findOneBy(name: string): Promise<Plate | Message> {
+    return this.plateRepository.findOneBy(name);
   }
 }

@@ -1,5 +1,5 @@
 import { PlateService } from "./carte.service";
-import { Plate } from "./plate";
+import { Plate, Message } from "./plate";
 
 export class PlateController {
   private plateService: PlateService;
@@ -11,7 +11,10 @@ export class PlateController {
     return this.plateService.findAll();
   }
 
-  async create(plat: Plate): Promise<Plate> {
+  async create(plat: Plate): Promise<Plate | Message> {
     return this.plateService.create(plat);
 }
+  async findOneBy(name: string): Promise<Plate | Message> {
+    return this.plateService.findOneBy(name);
+  }
 }
