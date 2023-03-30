@@ -42,5 +42,13 @@ export class PlateRepository {
     } 
     return plat;
   }
+   public updateOne(name: string, quantity: number): Plate | Error {
+    const plat = this.plates.find((plat) => name == plat.name);
+    if (!plat) {
+      throw new Error('This plate does not exist !');
+    } 
+    plat.quantity = quantity;
+    return plat;
+  }
 
 }

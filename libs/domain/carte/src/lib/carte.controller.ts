@@ -18,4 +18,7 @@ export class PlateController {
   async findOneBy(name: string): Promise<Plate | Error> {
     return this.plateService.findOneBy(name);
   }
+async updateOne(name: string, quantity: number): Promise<Plate | Error> {
+    return this.plateService.updateOne(name, quantity);
+  }
 }

@@ -28,13 +28,16 @@ export const definePlatRoutes = (app: Application) => {
 }catch(e) {
     res.status(404).send("Ce plat n'existe pas");
 
-}
+} });
 
+   app.get('/api/plate/update/:name', async (req, res) => {
+    try {
+    const name: string = req.params.name;
+    const quantity: number = req.body.quantity;
+    const plat = await controller.updateOne(name, quantity);
+    res.send(plat);
+}catch(e) {
+    res.status(404).send("Ce plat n'existe pas");
 
-
-
-
-
-
-  });
+} });
 };
