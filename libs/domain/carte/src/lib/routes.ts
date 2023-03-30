@@ -9,16 +9,32 @@ export const definePlatRoutes = (app: Application) => {
     res.send({"message" : "this is working"});
   });
    app.get('/api/plates', async (req, res) => {
-    const plats = await controller.findAll();
+   try {
+       const plats = await controller.findAll();
     res.send(plats);
+    }catch(e) {
+    res.status(404).send("Il n'y a pas de plats. Veuillez en créer un");
+}
   });
   app.post('/api/plate', async (req, res) => {
     const plat = await controller.create(req.body);
     res.send(plat);
   });
   app.get('/api/plate/:name', async (req, res) => {
+    try {
     const name: string = req.params.name;
     const plat = await controller.findOneBy(name);
     res.send(plat);
+}catch(e) {
+    res.status(404).send("Ce plat n'existe pas");
+
+}
+
+
+
+
+
+
+
   });
 };

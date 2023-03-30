@@ -7,7 +7,7 @@ export class PlateService {
     this.plateRepository = plateRepository || new PlateRepository();
   }
 
-  async findAll(): Promise<Plate[]> {
+  async findAll(): Promise<Plate[] | Error> {
     return this.plateRepository.findAll();
   }
 
@@ -15,7 +15,7 @@ export class PlateService {
     return this.plateRepository.create(plat);
   }
 
-   async findOneBy(name: string): Promise<Plate | Message> {
+   async findOneBy(name: string): Promise<Plate | Error> {
     return this.plateRepository.findOneBy(name);
   }
 }

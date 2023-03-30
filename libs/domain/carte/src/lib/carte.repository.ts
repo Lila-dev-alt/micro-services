@@ -3,7 +3,11 @@ import { Message, Plate } from "./plate";
 export class PlateRepository {
   private plates: Plate[] = [];
 
-  public findAll(): Plate[] {
+  public findAll(): Plate[] | Error {
+    if (this.plates.length === 0) {
+       throw new Error('There is no plates. Please create one');
+
+    }
     return this.plates;
   }
 
@@ -31,14 +35,12 @@ export class PlateRepository {
     this.plates.push(newPlate);
     return newPlate;
   }
-  public findOneBy(name: string): Plate | Message {
+  public findOneBy(name: string): Plate | Error {
     const plat = this.plates.find((plat) => name == plat.name);
     if (!plat) {
-      return {
-        message:
-          "Mauvais plat",
-      };
-    }
+      throw new Error('This plate does not exist !');
+    } 
     return plat;
   }
+
 }
