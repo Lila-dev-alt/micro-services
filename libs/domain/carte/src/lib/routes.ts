@@ -30,7 +30,7 @@ export const definePlatRoutes = (app: Application) => {
 
 } });
 
-   app.get('/api/plate/update/:name', async (req, res) => {
+   app.post('/api/plate/update/:name', async (req, res) => {
     try {
     const name: string = req.params.name;
     const quantity: number = req.body.quantity;
