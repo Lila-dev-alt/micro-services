@@ -19,3 +19,30 @@ Run `npx nx connect-to-nx-cloud` to enable [remote caching](https://nx.app) and 
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
+
+
+## Projet microservices
+
+### Démarrer le projet 
+
+```npm install```
+
+```npm start```
+
+### Les routes
+
+Voir tous les plats:
+
+```/api/plates```
+
+Créer un plat 
+
+```/api/plate```
+
+Trouver un plat
+
+```/api/plate/:name``
+
+Changer la quantité d'un plat 
+
+```/api/plate/update/:name```
