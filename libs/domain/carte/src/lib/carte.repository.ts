@@ -24,7 +24,7 @@ export class PlateRepository {
     } 
       const newPlate: Plate = {
     ...plate,
-    quantity: 0,
+    quantity: plate.quantity ? plate.quantity : 0,
     name: plate.name,
     type: plate.type,
     description: plate.description,
@@ -50,5 +50,13 @@ export class PlateRepository {
     plat.quantity = quantity;
     return plat;
   }
+  public findAllAvailablePlates(): Plate[] | Error {
+      const availablePlates = this.plates.filter(plate => plate.quantity > 0);
+      if (!availablePlates) {
+        throw new Error('There is no available plates.');
+
+      }
+    return availablePlates;
+    }
 
 }

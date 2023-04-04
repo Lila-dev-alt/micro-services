@@ -21,4 +21,8 @@ export class PlateService {
    async updateOne(name: string, quantity: number): Promise<Plate | Error> {
     return this.plateRepository.updateOne(name, quantity);
   }
+  
+   async findAllAvailablePlates(): Promise<Plate[] | Error> {
+    return this.plateRepository.findAllAvailablePlates();
+  }
 }

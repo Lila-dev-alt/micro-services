@@ -40,4 +40,11 @@ export const definePlatRoutes = (app: Application) => {
     res.status(404).send("Ce plat n'existe pas");
 
 } });
+  app.get('/api/carte', async (req, res) => {
+    try {
+    const plat = await controller.findAllAvailablePlates();
+    res.send(plat);
+}catch(e) {
+    res.status(404).send("Il n'y a pas de plats sur le menu");
+} });
 };
