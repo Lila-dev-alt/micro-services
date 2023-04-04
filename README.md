@@ -46,3 +46,7 @@ Trouver un plat
 Changer la quantité d'un plat 
 
 ```/api/plate/update/:name```
+
+Récupérer tous les plats disonibles:
+
+```/api/carte```
