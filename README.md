@@ -9,6 +9,11 @@
 
 ```npm start```
 
+Attention si vous utilisez postman:
+bien mettre dans le headers des requetes:
+en key : Content-type
+et en valeur: application/json
+
 ### Les routes
 
 ###### **1) Voir tous les plats:**
