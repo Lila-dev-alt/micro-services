@@ -1,3 +1,3 @@
 export * from './lib/routes';
-export * from './lib/carte.controller';
-export * from './lib/carte.service';
+export * from './lib/plate.controller';
+export * from './lib/plate.service';

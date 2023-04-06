@@ -1,5 +1,5 @@
 import { Application } from 'express';
-import { PlateController } from "./carte.controller";
+import { PlateController } from "./plate.controller";
 import { Plate } from './plate';
 const controller = new PlateController();
 

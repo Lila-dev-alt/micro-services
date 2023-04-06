@@ -1,4 +1,4 @@
-import { PlateRepository } from "./carte.repository";
+import { PlateRepository } from "./plate.repository";
 import { Plate, Message } from "./plate";
 
 export class PlateService {

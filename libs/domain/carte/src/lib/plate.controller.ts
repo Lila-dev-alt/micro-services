@@ -1,5 +1,5 @@
 import { ErrorRequestHandler } from "express";
-import { PlateService } from "./carte.service";
+import { PlateService } from "./plate.service";
 import { Plate, Message } from "./plate";
 
 export class PlateController {
